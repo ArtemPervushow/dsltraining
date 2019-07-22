@@ -9,7 +9,7 @@ job("$basePath/conditionalBatch") {
         conditionalSteps {
             condition {
                 and {
-                    status("ABORTED")
+                    status('ABORTED', 'FAILURE'")
                 } not {
                     fileExists("myBatch.bat", BaseDir.WORKSPACE)
                 }
