@@ -10,8 +10,6 @@ job("$basePath/conditionalBatch") {
             condition {
                 and {
                     status('ABORTED', 'FAILURE')
-                } not {
-                    fileExists("myBatch.bat", BaseDir.WORKSPACE)
                 }
             }
             runner('master')
