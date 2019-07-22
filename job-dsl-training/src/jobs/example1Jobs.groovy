@@ -1,21 +1,17 @@
 String basePath = 'sample1'
-String repo = 'pervushov/gradle-example'
 
 folder(basePath) {
-    description 'Echo'
+    description 'This example shows basic folder/job creation.'
 }
 
-job("$basePath/gradle-example-build") {
+job("$basePath/batch") {
     steps {
-        batchFile('echo Hello World!')
+        batchFile("echo Hello world")
     }
 }
 
-job("$basePath/gradle-example-deploy") {
-    parameters {
-        stringParam 'host'
-    }
+job("$basePath/shell") {
     steps {
-        shell 'scp war file; restart...'
+        shell 'echo Hi bro'
     }
 }
