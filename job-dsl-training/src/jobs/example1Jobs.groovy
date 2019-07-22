@@ -2,7 +2,7 @@ String basePath = 'example1'
 String repo = 'pervushov/gradle-example'
 
 folder(basePath) {
-    description 'Echo'
+    description 'This example shows basic folder/job creation.'
 }
 
 job("$basePath/gradle-example-build") {
@@ -13,7 +13,10 @@ job("$basePath/gradle-example-build") {
         scm 'H/5 * * * *'
     }
     steps {
-        echo 'hello'
+        gradle 'assemble'
+        script {
+            echo 'hello'
+        }
     }
 }
 
