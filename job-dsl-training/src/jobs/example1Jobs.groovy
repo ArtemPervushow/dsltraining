@@ -12,7 +12,7 @@ job("$basePath/conditionalBatch") {
                     status('ABORTED', 'FAILURE')
                 }
             }
-            runner('master')
+            runner('Fail')
             steps {
                 batchFile("echo Something wrong")
             }
