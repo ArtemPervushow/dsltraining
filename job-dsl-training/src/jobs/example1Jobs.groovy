@@ -4,8 +4,21 @@ folder(basePath) {
     description 'This example shows basic folder/job creation.'
 }
 
-job("$basePath/batch") {
+job("$basePath/conditionalBatch") {
     steps {
+        conditionalSteps {
+            condition {
+                and {
+                    status("ABORTED")
+                } not {
+                    fileExists("myBatch.bat", BaseDir.WORKSPACE)
+                }
+            }
+            runner('master')
+            steps {
+                batchFile("echo Something wrong")
+            }
+        }
         batchFile("echo Hello world")
     }
 }
