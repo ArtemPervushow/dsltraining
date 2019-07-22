@@ -5,7 +5,6 @@ folder(basePath) {
 }
 
 job("$basePath/GradleTask") {
-    gradle('check')
     gradle {
         tasks('clean')
     }
