@@ -14,9 +14,6 @@ job("$basePath/gradle-example-build") {
     }
     steps {
         gradle 'assemble'
-        script {
-            echo 'hello'
-        }
     }
 }
 
