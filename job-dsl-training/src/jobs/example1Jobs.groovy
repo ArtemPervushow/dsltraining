@@ -1,4 +1,4 @@
-String basePath = 'example1'
+String basePath = 'sample1'
 String repo = 'pervushov/gradle-example'
 
 folder(basePath) {
