@@ -6,14 +6,8 @@ folder(basePath) {
 }
 
 job("$basePath/gradle-example-build") {
-    scm {
-        github repo
-    }
-    triggers {
-        scm 'H/5 * * * *'
-    }
     steps {
-        echo 'hello'
+        batchFile('echo Hello World!')
     }
 }
 
